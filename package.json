@@ -1,0 +1,46 @@
+{
+  "name": "gatsby-starter-mdbreact",
+  "private": true,
+  "description": "A simple starter with MDBReact to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "dependencies": {
+    "gatsby": "2.20.31",
+    "gatsby-image": "2.3.5",
+    "gatsby-plugin-manifest": "2.3.7",
+    "gatsby-plugin-offline": "3.1.5",
+    "gatsby-plugin-react-helmet": "3.2.5",
+    "gatsby-plugin-sass": "2.2.4",
+    "gatsby-plugin-sharp": "2.5.7",
+    "gatsby-source-filesystem": "2.2.5",
+    "gatsby-transformer-sharp": "2.4.7",
+    "mdbreact": "4.25.6",
+    "node-sass": "4.14.0",
+    "prop-types": "15.7.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-helmet": "5.2.1"
+  },
+  "devDependencies": {
+    "prettier": "1.19.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}
