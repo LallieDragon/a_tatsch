@@ -7,10 +7,10 @@
   .container {
     display: flex;
     align-items: center;
-    height: 6rem;
+    height: 6vh;
 
     .navbar-brand {
-      height: 4rem;
+      height: 4vw;
 
       .logo-placeholder {
         color: $brand-primary-color;
@@ -31,7 +31,6 @@
       background-color: $brand-dark-color;
       z-index: 5;
       .nav-item {
-        height: 4rem;
         .nav-link {
           transition:.5s ease;
           color: lighten($brand-secondary-color, 10%);

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Hair Magic`,
-    description: `Hair Magic Salon's Website`,
+    description: `Hair Magic Salon in Wimberley, TX`,
     author: `C. Simecheck`,
   },
   plugins: [
