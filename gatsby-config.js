@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby + MDBReact`,
-    description: `Kick off your next, great Gatsby project with this default starter.`,
-    author: `@zlidev`,
+    title: `Hair Magic`,
+    description: `Hair Magic Salon's Website`,
+    author: `C. Simecheck`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -14,7 +14,14 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        useMozJpeg: false,
+        stripMetadata: true,
+        defaultQuality: 90,
+      },
+    },
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -26,6 +33,13 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

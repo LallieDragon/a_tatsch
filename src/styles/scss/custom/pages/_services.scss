@@ -1,0 +1,54 @@
+@import '../../custom-variables';
+@import '../../core/bootstrap/rfs';
+
+#services {
+  .row {
+    margin: 0 0;
+  }
+
+  h1, p, li {
+    text-align: center;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  li {
+    @include responsive-font-size(1.5rem);
+    line-height: 3rem;
+  }
+
+  h1::first-letter {
+    font-family: $brand-secondary-font !important;
+  }
+
+
+  .tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include responsive-font-size(2rem);
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    color: $brand-light-color;
+    background-color: #390823;
+    transition: .5s ease;
+    text-align: center;
+    padding-bottom: 0 !important;
+    padding: .25rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    &:hover {
+      background-color: lighten(#390823, 15%);
+    }
+  }
+
+    .focused {
+      color: $brand-light-color;
+      background-color: $brand-secondary-color;
+
+      &:hover {
+        background-color: $brand-secondary-color;
+      }
+    }
+}

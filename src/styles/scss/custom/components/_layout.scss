@@ -1,0 +1,44 @@
+@import '../../custom-variables';
+@import '../../core/bootstrap/rfs';
+
+#layout {
+  .page {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: $brand-light-color;
+    color: $brand-dark-color;
+    display: flex;
+    flex-direction: column;
+
+
+    .site-content {
+      min-height: 75vh;
+      flex-grow: 1;
+      overflow: hidden;
+
+      p, h1 {
+        font-family: $brand-secondary-font;
+      }
+
+      h1::first-letter {
+        font-family: $brand-primary-font;
+      }
+
+      .col-auto {
+        padding: 0 0;
+      }
+
+      .col-auto, .col-md-6 {
+        padding-bottom: 3rem;
+      }
+
+      h1 {
+        padding-bottom: 1rem;
+      }
+
+      p {
+        @include responsive-font-size(1.5rem);
+      }
+    }
+  }
+}
