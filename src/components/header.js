@@ -33,7 +33,7 @@ const Header = () => {
   return (
     <MDBNavbar dark expand="md" id="header">
       <MDBContainer className="py-5">
-        <MDBCol md="5" className="logo-column">
+        <MDBCol size="5" md="5" lg="5" className="logo-column">
           <Link to="/" className="logo-placeholder">
             <Img
               fluid={data.contentfulHeaderContent.logo.fluid}
