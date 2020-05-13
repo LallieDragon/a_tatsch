@@ -3,6 +3,7 @@ module.exports = {
     title: `Hair Magic`,
     description: `Hair Magic Salon in Wimberley, TX`,
     author: `C. Simecheck`,
+    logo: `src/images/logo.png`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

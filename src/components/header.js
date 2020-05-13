@@ -1,67 +1,71 @@
-import React, { Component } from "react"
-import PropTypes from "prop-types"
+import React, { useState } from "react"
+import { graphql, useStaticQuery, } from "gatsby"
+import Img from 'gatsby-image'
 
 import { Link } from "gatsby"
 import {
   MDBNavbar,
-  MDBNavbarBrand,
   MDBNavbarNav,
   MDBNavItem,
   MDBNavbarToggler,
   MDBCollapse,
   MDBContainer,
+  MDBCol,
 } from "mdbreact"
 
-class Header extends Component {
-  state = {
-    isOpen: false,
-  }
+const Header = () => {
+  const [ isOpen, setOpen ] = useState(false)
 
-  toggleCollapse = () => {
-    this.setState({ isOpen: !this.state.isOpen })
-  }
+  const data = useStaticQuery(graphql`
+    query {
+			contentfulHeaderContent {
+        tabNames
+        logo {
+          description
+          fluid {
+            ...GatsbyContentfulFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
 
-  render() {
-    return (
-      <MDBNavbar dark expand="md" id="header">
-        <MDBContainer className="py-5">
-          <MDBNavbarBrand>
-            <Link to="/" className="logo-placeholder">
-              <h1>{this.props.siteTitle.toUpperCase()}</h1>
-            </Link>
-          </MDBNavbarBrand>
-          <MDBNavbarToggler onClick={this.toggleCollapse} />
-          <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
-          <MDBNavbarNav right>
-            <MDBNavItem>
-              <Link className="nav-link" activeClassName="active" to="/">Home</Link>
-            </MDBNavItem>
-            <MDBNavItem>
-              <Link className="nav-link" activeClassName="active" to="/services">Services</Link>
-            </MDBNavItem>
-            <MDBNavItem>
-              <Link className="nav-link" activeClassName="active" to="/portfolio">Portfolio</Link>
-            </MDBNavItem>
-            <MDBNavItem>
-              <Link className="nav-link" activeClassName="active" to="/policies">Policies</Link>
-            </MDBNavItem>
-            <MDBNavItem>
-              <Link className="nav-link" activeClassName="active" to="/contact">Contact</Link>
-            </MDBNavItem>
-          </MDBNavbarNav>
-          </MDBCollapse>
-        </MDBContainer>
-      </MDBNavbar>
-    )
-  }
+  return (
+    <MDBNavbar dark expand="md" id="header">
+      <MDBContainer className="py-5">
+        <MDBCol md="5" className="logo-column">
+          <Link to="/" className="logo-placeholder">
+            <Img
+              fluid={data.contentfulHeaderContent.logo.fluid}
+              alt={data.contentfulHeaderContent.logo.description.replace(/-/g, ' ').substring(2)}
+              loading="eager"
+            />
+          </Link>
+        </MDBCol>
+        <MDBNavbarToggler onClick={(e) => setOpen(!isOpen)} />
+        <MDBCollapse id="navbarCollapse3" isOpen={isOpen} navbar>
+        <MDBNavbarNav right>
+          <MDBNavItem>
+            <Link className="nav-link" activeClassName="active" to="/">Home</Link>
+          </MDBNavItem>
+          <MDBNavItem>
+            <Link className="nav-link" activeClassName="active" to="/services">Services</Link>
+          </MDBNavItem>
+          <MDBNavItem>
+            <Link className="nav-link" activeClassName="active" to="/portfolio">Portfolio</Link>
+          </MDBNavItem>
+          <MDBNavItem>
+            <Link className="nav-link" activeClassName="active" to="/policies">Policies</Link>
+          </MDBNavItem>
+          <MDBNavItem>
+            <Link className="nav-link" activeClassName="active" to="/contact">Contact</Link>
+          </MDBNavItem>
+        </MDBNavbarNav>
+        </MDBCollapse>
+      </MDBContainer>
+    </MDBNavbar>
+  )
 }
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

@@ -9,24 +9,6 @@
     align-items: center;
     height: 6vh;
 
-    .navbar-brand {
-      height: 4vw;
-
-      .logo-placeholder {
-        color: $brand-primary-color;
-        font-family: $brand-primary-font;
-
-        h1 {
-          @include responsive-font-size(4.5rem);
-        }
-
-        &:hover {
-          transition:.5s ease;
-          color: lighten($brand-primary-color, 15%)
-        }
-      }
-    }
-
     #navbarCollapse3 {
       background-color: $brand-dark-color;
       z-index: 5;
@@ -40,12 +22,6 @@
             color: lighten($brand-secondary-color, 25%)
           }
         }
-
-        // .nav-link::first-letter {
-        //   font-family: $brand-primary-font;
-        //   font-size: 2rem;
-        // }
-
         .active {
           transition:.5s ease;
           color: lighten($brand-secondary-color, 50%);
@@ -57,4 +33,5 @@
       }
     }
   }
+
 }
