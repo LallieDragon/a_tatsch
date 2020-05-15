@@ -57,7 +57,7 @@ const PortfolioPage = () => {
     <Layout>
       <SEO title="Portfolio" />
       <div id="portfolio">
-        PortfolioPage
+        <h1>Portfolio Page</h1>
       </div>
     </Layout>
   )

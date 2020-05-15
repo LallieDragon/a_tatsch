@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-mdbreact",
+  "name": "Hair Magic Website",
   "private": true,
-  "description": "A simple starter with MDBReact to get up and developing quickly with Gatsby",
+  "description": "Hair Magic Website",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Carrington Simecheck <c.simecheck89@yahoo.com.com>",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",
     "env-cmd": "^10.1.0",
@@ -42,9 +42,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/LallieDragon/a_tatsch"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/LallieDragon/a_tatsch/issues"
   }
 }

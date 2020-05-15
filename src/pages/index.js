@@ -44,7 +44,6 @@ const HomePage = () => {
     )
   }
 
-
   let title = renderTitle(data.contentfulAboutPageContentBlock.blockTitle)
 
   return (
