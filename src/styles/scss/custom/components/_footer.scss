@@ -1,0 +1,31 @@
+@import '../../custom-variables';
+@import '../../core/bootstrap/rfs';
+
+#footer {
+  background-color: $brand-dark-color;
+  color: $brand-secondary-color;
+  margin-top: 0 !important;
+
+  .address-link, .phone-link {
+    font-family: $brand-secondary-font;
+    font-size: 1.5rem;
+    padding-right: 5px;
+    transition:.5s ease;
+    margin-top: 16px;
+  }
+
+  .phone-link {
+    color: $brand-primary-color;
+    &:hover {
+      color: lighten($brand-primary-color, 50%)
+    }
+  }
+
+  .address-link {
+    color: $brand-secondary-color;
+
+    &:hover {
+      color: lighten($brand-secondary-color, 50%)
+    }
+  }
+}

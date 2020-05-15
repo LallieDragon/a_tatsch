@@ -47,8 +47,6 @@ const HomePage = () => {
 
   let title = renderTitle(data.contentfulAboutPageContentBlock.blockTitle)
 
-  console.log(title)
-
   return (
     <Layout>
       <SEO title="Home" />

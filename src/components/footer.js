@@ -1,36 +1,45 @@
 import React from "react"
-import { MDBContainer, MDBFooter } from "mdbreact"
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { getOptions } from '../utils/richTextOptions'
+import { graphql, useStaticQuery, } from "gatsby"
+import { Link } from "gatsby"
+
+import {
+  MDBContainer,
+  MDBFooter,
+ } from "mdbreact"
 
 const Footer = () => {
+  let options = getOptions()
+
+  const data = useStaticQuery(graphql`
+    query {
+      contentfulContactInformation {
+        pageTitle
+        writtenAddress {
+          json
+        }
+        phoneNumber
+        facebookLink
+      }
+    }
+  `)
+
   return (
-    <MDBFooter color="primary-color" className="font-small mt-4">
+    <MDBFooter id="footer" className="font-small mt-4">
+      <MDBContainer fluid className="text-center text-md-left">
+        <div className="d-flex flex-row justify-content-center align-content-center">
+          <Link to="/contact" className="d-flex address-link">
+            {documentToReactComponents(data.contentfulContactInformation.writtenAddress.json, options)}
+          </Link>
+          <a className="phone-link" href={`tel:${data.contentfulContactInformation.phoneNumber}`}>
+            <p>{data.contentfulContactInformation.phoneNumber}</p>
+          </a>
+        </div>
+      </MDBContainer>
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
-          Made by{" "}
-          <a
-            href="https://zlicreative.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ZLI Creative
-          </a>{" "}
-          - Built with{" "}
-          <a
-            href="https://www.gatsbyjs.org"
-            targe="_blank"
-            rel="noopener noreferrer"
-          >
-            Gatsby
-          </a>{" "}
-          and
-          <a
-            href="https://www.MDBootstrap.com"
-            targe="_blank"
-            rel="noopener noreferrer"
-          >
-            {" "}
-            MDBootstrap.com{" "}
-          </a>
+           <a href="https://linkedin.com/in/carrington-simecheck">&copy; {new Date().getFullYear()} Copyright</a>
         </MDBContainer>
       </div>
     </MDBFooter>
