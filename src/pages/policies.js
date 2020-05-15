@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery, } from "gatsby"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { getOptions } from '../utils/richTextOptions'
-import { MDBContainer } from "mdbreact"
+import { MDBContainer, MDBRow } from "mdbreact"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -12,9 +12,11 @@ const PoliciesPage = () => {
     let options = getOptions()
 
     let content = data.nodes.map((node) => {
+      let title = renderTitle(node.policyTitle)
+
       return (
         <div key={node.id}>
-          <h1>{node.policyTitle}</h1>
+          <h1>{title}</h1>
           {documentToReactComponents(node.policyBody.json, options)}
         </div>
       )
@@ -40,6 +42,18 @@ const PoliciesPage = () => {
       }
     }
   `)
+
+  const renderTitle = (title) => {
+    let titleArray = title.split(" ")
+
+    return (
+      <MDBRow center className="title">
+        {titleArray.map((word) => {
+          return <h1 className="title-word" key={word}>{word}</h1>
+        })}
+      </MDBRow>
+    )
+  }
 
   let content = renderContent(data.allContentfulPoliciesPageContentBlock)
 

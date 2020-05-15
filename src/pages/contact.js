@@ -29,6 +29,20 @@ const ContactPage = () => {
     }
   `)
 
+  const renderTitle = (title) => {
+    let titleArray = title.split(" ")
+
+    return (
+      <MDBRow className="title">
+        {titleArray.map((word) => {
+          return <h1 className="title-word" key={word}>{word}</h1>
+        })}
+      </MDBRow>
+    )
+  }
+
+  let title = renderTitle(data.contentfulContactInformation.pageTitle)
+
   return (
     <Layout>
       <SEO title="Contact" />
@@ -44,7 +58,7 @@ const ContactPage = () => {
             </iframe>
           </MDBCol>
           <MDBCol md="6">
-            <h1>{data.contentfulContactInformation.pageTitle}</h1>
+            <h1>{title}</h1>
             <div>
               <p>We are located at</p>
               {documentToReactComponents(data.contentfulContactInformation.writtenAddress.json, options)}

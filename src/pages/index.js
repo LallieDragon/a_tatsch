@@ -32,10 +32,27 @@ const HomePage = () => {
     }
   `)
 
+  const renderTitle = (title) => {
+    let titleArray = title.split(" ")
+
+    return (
+      <MDBRow className="title">
+        {titleArray.map((word) => {
+          return <h1 className="title-word" key={word}>{word}</h1>
+        })}
+      </MDBRow>
+    )
+  }
+
+
+  let title = renderTitle(data.contentfulAboutPageContentBlock.blockTitle)
+
+  console.log(title)
+
   return (
     <Layout>
       <SEO title="Home" />
-      <MDBContainer id="home">
+      <MDBContainer id="index">
         <MDBRow>
           <MDBCol md="6">
             <Img
@@ -45,7 +62,7 @@ const HomePage = () => {
             />
           </MDBCol>
           <MDBCol md="6">
-            <h1>{data.contentfulAboutPageContentBlock.blockTitle}</h1>
+            <h1>{title}</h1>
             {documentToReactComponents(data.contentfulAboutPageContentBlock.blockBody.json, options)}
           </MDBCol>
         </MDBRow>
