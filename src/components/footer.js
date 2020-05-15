@@ -28,8 +28,8 @@ const Footer = () => {
   return (
     <MDBFooter id="footer" className="font-small mt-4">
       <MDBContainer fluid className="text-center text-md-left">
-        <div className="d-flex flex-row justify-content-center align-content-center">
-          <Link to="/contact" className="d-flex address-link">
+        <div className="d-flex flex-row flex-wrap justify-content-center align-content-center">
+          <Link to="/contact" className="d-flex flex-wrap address-link">
             {documentToReactComponents(data.contentfulContactInformation.writtenAddress.json, options)}
           </Link>
           <a className="phone-link" href={`tel:${data.contentfulContactInformation.phoneNumber}`}>
