@@ -1,6 +1,7 @@
 <!-- Status Badges -->
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bb5f1475-b470-4dd1-b480-f1d6f829bb01/deploy-status)](https://app.netlify.com/sites/gatsby-starter-mdbreact/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3e299825-8e73-4bca-a166-3519e2cf00cb/deploy-status)](https://app.netlify.com/sites/eager-torvalds-fc2fee/deploys)
+
 
 # Hair Magic, Wimberley Website
 
